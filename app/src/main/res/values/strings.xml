@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">StickFlight</string>
+    <string name="action_settings">Settings</string>
+    <string name="editor">EDITOR</string>
+    <string name="add_btn">ADD</string>
+    <string name="delete_btn">DELETE</string>
+    <string name="return_btn">RETURN</string>
+    <string name="confirm_btn">CONFIRM</string>
+    <string name="rollText">ROLL:</string>
+    <string name="pitchText">PITCH:</string>
+    <string name="throttleText">THROTTLE:</string>
+    <string name="yawText">YAW:</string>
+    <string name="delayText">DELAY:</string>
+    <string name="rollEnter">Please Enter ROLL Parameter: </string>
+    <string name="pitchEnter">Please Enter PITCH Parameter: </string>
+    <string name="throttleEnter">Please Enter THROTTLE Parameter: </string>
+    <string name="yawEnter">Please Enter YAW Parameter: </string>
+    <string name="delayEnter">Please Enter DELAY Parameter: </string>
+    <string name="zeroData">0</string>
+</resources>

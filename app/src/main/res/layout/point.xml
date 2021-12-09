@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/roll"
+        android:background="@null"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:layout_height="30dp">
+    </TextView>
+
+    <TextView
+        android:id="@+id/pitch"
+        android:background="@null"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:layout_height="30dp">
+    </TextView>
+
+    <TextView
+        android:id="@+id/throttle"
+        android:background="@null"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:layout_height="30dp">
+    </TextView>
+
+    <TextView
+        android:id="@+id/yaw"
+        android:background="@null"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:layout_height="30dp">
+    </TextView>
+
+    <TextView
+        android:id="@+id/delay"
+        android:background="@null"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textColor="@color/blue"
+        android:layout_height="30dp">
+    </TextView>
+
+    <ImageButton
+        android:id="@+id/btn_delete"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:background="@null"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_close_gray_24dp" />
+
+</LinearLayout>
