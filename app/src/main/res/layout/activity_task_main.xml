@@ -16,6 +16,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="top"
+            android:textColor="#0000FF"
             android:layout_weight="1"
             android:enabled="true"
             android:text="@string/return_btn" />
@@ -25,6 +26,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="top"
+            android:textColor="#0000FF"
             android:layout_weight="1"
             android:enabled="true"
             android:text="CONTROL" />
@@ -44,6 +46,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="top"
+            android:textColor="#0000FF"
             android:layout_weight="1"
             android:enabled="true"
             android:text="@string/add_btn" />
@@ -60,35 +63,35 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="Roll"/>
+            android:text="Roll(m/s)"/>
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="Pitch"/>
+            android:text="Pitch(m/s)"/>
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="Throttle/m"/>
+            android:text="Throttle(m)"/>
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="Yaw/°"/>
+            android:text="Yaw(°)"/>
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="Delay/ms"
+            android:text="Delay(ms)"
             android:textColor="@color/blue"/>
 
         <TextView

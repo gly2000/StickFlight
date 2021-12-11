@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -144,21 +145,26 @@ public class EditorActivity extends Activity implements OnClickListener {
         //只有在停止飞行的情况下才能收回控制权
         if(!isStartStickControl){
             if(isEnableStick){
-                //释放控制权
-                endControl();
                 //释放计时器
                 disableControl();
-                return_btn.setTextColor(0xFFFFFF);
-                start_btn.setTextColor(0xFF0000);
-                control_btn.setTextColor(0xFFFFFF);
-                add_btn.setTextColor(0xFFFFFF);
+                //释放控制权
+                endControl();
+                return_btn.setTextColor(Color.parseColor("#0000FF"));
+                start_btn.setTextColor(Color.parseColor("#FF0000"));
+                control_btn.setTextColor(Color.parseColor("#0000FF"));
+                add_btn.setTextColor(Color.parseColor("#0000FF"));
+                Toast toast = Toast.makeText(getApplicationContext(),"Stick flight model end!", Toast.LENGTH_LONG);
+                toast.show();
                 isEnableStick = false;
             }else{
+                //Toast toast = Toast.makeText(getApplicationContext(),"Stick flight model start!", Toast.LENGTH_LONG);
+                //toast.show();
+                isEnableStick = true;
                 setControlMode();
-                return_btn.setTextColor(0xFF0000);
-                start_btn.setTextColor(0xFFFFFF);
-                control_btn.setTextColor(0xFFFFFF);
-                add_btn.setTextColor(0xFF0000);
+                return_btn.setTextColor(Color.parseColor("#FF0000"));
+                start_btn.setTextColor(Color.parseColor("#0000FF"));
+                control_btn.setTextColor(Color.parseColor("#0000FF"));
+                add_btn.setTextColor(Color.parseColor("#FF0000"));
             }
         }else{
             Toast toast = Toast.makeText(getApplicationContext(),"Please wait flight end!", Toast.LENGTH_LONG);
@@ -171,11 +177,12 @@ public class EditorActivity extends Activity implements OnClickListener {
         //只有在获得无人机控制权后才能继续
         if(isEnableStick){
             isStartStickControl = true;
-            return_btn.setTextColor(0xFF0000);
-            start_btn.setTextColor(0xFF0000);
-            control_btn.setTextColor(0xFF0000);
-            add_btn.setTextColor(0xFF0000);
+            return_btn.setTextColor(Color.parseColor("#FF0000"));
+            start_btn.setTextColor(Color.parseColor("#FF0000"));
+            control_btn.setTextColor(Color.parseColor("#FF0000"));
+            add_btn.setTextColor(Color.parseColor("#FF0000"));
             virtualControl();
+            isStartStickControl = false;
             setIsEnableStick();
         }else{
             Toast toast = Toast.makeText(getApplicationContext(),"Please start virtual stick mode!", Toast.LENGTH_LONG);
@@ -210,8 +217,12 @@ public class EditorActivity extends Activity implements OnClickListener {
                                 setYawControlMode(YawControlMode.ANGLE);
                         aircraft.getFlightController().
                                 setRollPitchControlMode(RollPitchControlMode.VELOCITY);
+                        Toast toast = Toast.makeText(getApplicationContext(),"Stick flight model start!", Toast.LENGTH_LONG);
+                        toast.show();
                     } else {
                         Log.e("virtual", "error = " + djiError.getDescription());
+                        Toast toast = Toast.makeText(getApplicationContext(),"error = " + djiError.getDescription(), Toast.LENGTH_LONG);
+                        toast.show();
                     }
                 });
 
@@ -267,11 +278,7 @@ public class EditorActivity extends Activity implements OnClickListener {
     public void virtualControl() {
         cursor = dbReader.query(RouteDB.TABLE_NAME, null, null, null, null, null, null);
         cursor.moveToFirst();
-        Integer step = 0;
         for (cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
-            step = step + 1;
-            Toast toast = Toast.makeText(getApplicationContext(),"Step " + step.toString() + " is running", Toast.LENGTH_SHORT);
-            toast.show();
             roll = cursor.getFloat(cursor.getColumnIndex(RouteDB.ROLL));
             pitch = cursor.getFloat(cursor.getColumnIndex(RouteDB.PITCH));
             throttle = cursor.getFloat(cursor.getColumnIndex(RouteDB.THROTTLE));

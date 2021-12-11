@@ -46,7 +46,7 @@
             android:text="@string/zeroData"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:numeric="decimal"
+            android:inputType="numberSigned|numberDecimal"
             tools:ignore="Deprecated">
         </EditText>
 
@@ -69,7 +69,7 @@
             android:text="@string/zeroData"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:numeric="decimal"
+            android:inputType="numberSigned|numberDecimal"
             tools:ignore="Deprecated">
         </EditText>
 
@@ -92,7 +92,7 @@
             android:text="@string/zeroData"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:numeric="decimal"
+            android:inputType="numberSigned|numberDecimal"
             tools:ignore="Deprecated">
         </EditText>
 
@@ -115,7 +115,7 @@
             android:text="@string/zeroData"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:numeric="decimal"
+            android:inputType="numberSigned|numberDecimal"
             tools:ignore="Deprecated">
         </EditText>
 
@@ -139,7 +139,7 @@
             android:text="10000"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:numeric="decimal"
+            android:inputType="numberSigned|numberDecimal"
             tools:ignore="Deprecated">
         </EditText>
 
